@@ -6,15 +6,15 @@
 <h3 align="center">A custom Mihomo kernel based on Meta branch.</h3>
 
 <p align="center">
-  <a href="https://goreportcard.com/report/github.com/MetaCubeX/mihomo">
-    <img src="https://goreportcard.com/badge/github.com/MetaCubeX/mihomo?style=flat-square">
+  <a href="https://goreportcard.com/report/github.com/berkisland/mihomorig">
+    <img src="https://goreportcard.com/badge/github.com/berkisland/mihomorig?style=flat-square">
   </a>
-  <img src="https://img.shields.io/github/go-mod/go-version/MetaCubeX/mihomo/Alpha?style=flat-square">
-  <a href="https://github.com/MetaCubeX/mihomo/releases">
-    <img src="https://img.shields.io/github/release/MetaCubeX/mihomo/all.svg?style=flat-square">
+  <img src="https://img.shields.io/github/go-mod/go-version/berkisland/mihomorig/ulysses?style=flat-square">
+  <a href="https://github.com/berkisland/mihomorig/releases">
+    <img src="https://img.shields.io/github/release/berkisland/mihomorig/all.svg?style=flat-square">
   </a>
-  <a href="https://github.com/MetaCubeX/mihomo/tree/Meta">
-    <img src="https://img.shields.io/badge/based%20on-Meta%20branch-00b4f0?style=flat-square">
+  <a href="https://github.com/berkisland/mihomorig/tree/ulysses">
+    <img src="https://img.shields.io/badge/branch-ulysses-00b4f0?style=flat-square">
   </a>
 </p>
 
@@ -36,7 +36,7 @@ A web dashboard with first-class support for this project has been created; it c
 
 ## Configration example
 
-Configuration example is located at [/docs/config.yaml](https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml).
+Configuration example is located at [/docs/config.yaml](https://github.com/berkisland/mihomorig/blob/ulysses/docs/config.yaml).
 
 ## Docs
 
@@ -50,8 +50,8 @@ Requirements:
 Build Ulysses:
 
 ```shell
-git clone https://github.com/MetaCubeX/mihomo.git -b Meta
-cd mihomo && go mod download
+git clone https://github.com/berkisland/mihomorig.git -b ulysses
+cd mihomorig && go mod download
 make all
 ```
 
@@ -101,10 +101,11 @@ API.
 
 ## About
 
-Ulysses is a custom fork based on the [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) Meta branch, designed for development and customization purposes.
+Ulysses is a custom fork based on the [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) Meta branch. This project is maintained at [berkisland/mihomorig](https://github.com/berkisland/mihomorig) and is designed for development and customization purposes.
 
 ## Credits
 
+- [berkisland/mihomorig](https://github.com/berkisland/mihomorig) - Ulysses project repository
 - [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) - The base project
 - [Dreamacro/clash](https://github.com/Dreamacro/clash)
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
