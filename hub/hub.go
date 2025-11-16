@@ -69,7 +69,7 @@ func applyRoute(cfg *config.Config) {
 	})
 }
 
-// Parse call at the beginning of mihomo
+// Parse call at the beginning of ulysses
 func Parse(configBytes []byte, options ...Option) error {
 	var cfg *config.Config
 	var err error

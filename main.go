@@ -53,7 +53,7 @@ func init() {
 	flag.StringVar(&externalControllerPipe, "ext-ctl-pipe", os.Getenv("CLASH_OVERRIDE_EXTERNAL_CONTROLLER_PIPE"), "override external controller pipe address")
 	flag.StringVar(&secret, "secret", os.Getenv("CLASH_OVERRIDE_SECRET"), "override secret for RESTful API")
 	flag.BoolVar(&geodataMode, "m", false, "set geodata mode")
-	flag.BoolVar(&version, "v", false, "show current version of mihomo")
+	flag.BoolVar(&version, "v", false, "show current version of ulysses")
 	flag.BoolVar(&testConfig, "t", false, "test configuration and exit")
 	flag.Parse()
 }
@@ -90,7 +90,7 @@ func main() {
 	}
 
 	if version {
-		fmt.Printf("Mihomo Meta %s %s %s with %s %s\n",
+		fmt.Printf("Ulysses %s %s %s with %s %s\n",
 			C.Version, runtime.GOOS, runtime.GOARCH, runtime.Version(), C.BuildTime)
 		if tags := features.Tags(); len(tags) != 0 {
 			fmt.Printf("Use tags: %s\n", strings.Join(tags, ", "))

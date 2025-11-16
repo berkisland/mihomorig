@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img src="Meta.png" alt="Meta Kennel" width="200">
-  <br>Meta Kernel<br>
+  <img src="Meta.png" alt="Ulysses" width="200">
+  <br>Ulysses<br>
 </h1>
 
-<h3 align="center">Another Mihomo Kernel.</h3>
+<h3 align="center">A custom Mihomo kernel based on Meta branch.</h3>
 
 <p align="center">
   <a href="https://goreportcard.com/report/github.com/MetaCubeX/mihomo">
@@ -13,8 +13,8 @@
   <a href="https://github.com/MetaCubeX/mihomo/releases">
     <img src="https://img.shields.io/github/release/MetaCubeX/mihomo/all.svg?style=flat-square">
   </a>
-  <a href="https://github.com/MetaCubeX/mihomo">
-    <img src="https://img.shields.io/badge/release-Meta-00b4f0?style=flat-square">
+  <a href="https://github.com/MetaCubeX/mihomo/tree/Meta">
+    <img src="https://img.shields.io/badge/based%20on-Meta%20branch-00b4f0?style=flat-square">
   </a>
 </p>
 
@@ -47,12 +47,12 @@ Documentation can be found in [mihomo Docs](https://wiki.metacubex.one/).
 Requirements:
 [Go 1.20 or newer](https://go.dev/dl/)
 
-Build mihomo:
+Build Ulysses:
 
 ```shell
-git clone https://github.com/MetaCubeX/mihomo.git
+git clone https://github.com/MetaCubeX/mihomo.git -b Meta
 cd mihomo && go mod download
-go build
+make all
 ```
 
 Set go proxy if a connection to GitHub is not possible:
@@ -64,7 +64,21 @@ go env -w GOPROXY=https://goproxy.io,direct
 Build with gvisor tun stack:
 
 ```shell
-go build -tags with_gvisor
+make all
+```
+
+Or build a specific platform:
+
+```shell
+make darwin-arm64
+make linux-amd64-v3
+make windows-amd64
+```
+
+Generate release packages:
+
+```shell
+make releases
 ```
 
 ### IPTABLES configuration
@@ -85,8 +99,13 @@ iptables:
 Check [wiki](https://wiki.metacubex.one/api/#debug) to get an instruction on using debug
 API.
 
+## About
+
+Ulysses is a custom fork based on the [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) Meta branch, designed for development and customization purposes.
+
 ## Credits
 
+- [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo) - The base project
 - [Dreamacro/clash](https://github.com/Dreamacro/clash)
 - [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
 - [riobard/go-shadowsocks2](https://github.com/riobard/go-shadowsocks2)
@@ -98,4 +117,4 @@ API.
 
 This software is released under the GPL-3.0 license.
 
-**In addition, any downstream projects not affiliated with `MetaCubeX` shall not contain the word `mihomo` in their names.**
+**Ulysses is based on MetaCubeX/mihomo and maintains the same license terms.**

@@ -537,5 +537,5 @@ func Shutdown() {
 	tproxy.CleanupTProxyIPTables()
 	resolver.StoreFakePoolState()
 
-	log.Warnln("Mihomo shutting down")
+	log.Warnln("Ulysses shutting down")
 }
