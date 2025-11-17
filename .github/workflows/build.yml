@@ -82,14 +82,15 @@ jobs:
         GOMIPS: ${{matrix.jobs.gomips}}
       run: |
         go env
-        go build -v -tags "with_gvisor" -trimpath -ldflags "${BUILDTAG} -X 'github.com/metacubex/mihomo/constant.Version=${VERSION}' -X 'github.com/metacubex/mihomo/constant.BuildTime=${BUILDTIME}' -w -s -buildid="
+        COMMIT_ID=$(git rev-parse --short HEAD)
+        go build -v -tags "with_gvisor" -trimpath -ldflags "${BUILDTAG} -X 'github.com/metacubex/mihomo/constant.Version=${VERSION}' -X 'github.com/metacubex/mihomo/constant.BuildTime=${BUILDTIME}' -w -s -buildid=" -o ulysses${{ matrix.jobs.goos == 'windows' && '.exe' || '' }}
         if [ "${{matrix.jobs.goos}}" = "windows" ]; then
-          cp mihomo.exe mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}}.exe
-          zip -r mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}}-${VERSION}.zip mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}}.exe
+          mv ulysses.exe ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}}.exe
+          zip -r ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}}-${VERSION}-${COMMIT_ID}.zip ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}}.exe
         else
-          cp mihomo mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}}
-          gzip -c mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}} > mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}}-${VERSION}.gz
-          rm mihomo-${{matrix.jobs.goos}}-${{matrix.jobs.output}}
+          mv ulysses ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}}
+          gzip -c ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}} > ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}}-${VERSION}-${COMMIT_ID}.gz
+          rm ulysses-${{matrix.jobs.goos}}-${{matrix.jobs.output}}
         fi
 
     - name: Save version
@@ -102,8 +103,8 @@ jobs:
       with:
         name: "${{ matrix.jobs.goos }}-${{ matrix.jobs.output }}"
         path: |
-          mihomo*.gz
-          mihomo*.zip
+          ulysses*.gz
+          ulysses*.zip
           version.txt
 
   Upload-Prerelease:

@@ -480,7 +480,7 @@ func DefaultRawConfig() *RawConfig {
 		ProxyGroup:        []map[string]any{},
 		TCPConcurrent:     false,
 		FindProcessMode:   process.FindProcessStrict,
-		GlobalUA:          "clash.meta/" + C.Version,
+		GlobalUA:          "ulysses/" + C.Version,
 		ETagSupport:       true,
 		DNS: RawDNS{
 			Enable:         false,
