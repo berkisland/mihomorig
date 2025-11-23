@@ -12,7 +12,7 @@ import (
 	"github.com/metacubex/mihomo/constant/features"
 )
 
-const Name = "mihomo"
+const Name = "ulysses"
 
 var (
 	GeositeName = "GeoSite.dat"
@@ -215,7 +215,7 @@ func (p *path) GetAssetLocation(file string) string {
 func (p *path) GetExecutableFullPath() string {
 	exePath, err := os.Executable()
 	if err != nil {
-		return "mihomo"
+		return "ulysses"
 	}
 	res, _ := filepath.EvalSymlinks(exePath)
 	return res

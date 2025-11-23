@@ -47,7 +47,9 @@ var mux sync.Mutex
 
 func readConfig(path string) ([]byte, error) {
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		return nil, err
+		// Use default config if file doesn't exist
+		log.Warnln("Configuration file not found, using default configuration")
+		return []byte(config.DefaultConfig), nil
 	}
 	data, err := os.ReadFile(path)
 	if err != nil {
